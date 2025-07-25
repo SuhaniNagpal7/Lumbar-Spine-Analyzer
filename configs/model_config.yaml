@@ -1,0 +1,71 @@
+# Model Configuration for Lumbar Spine Analysis
+
+# Vertebra Detection Settings
+vertebra_detection:
+  model_type: "spinenet"
+  device: "cuda"
+  confidence_threshold: 0.5
+  nms_threshold: 0.3
+  max_detections: 10
+
+# Condition Classification Settings
+classification:
+  model_type: "coatnet_rmlp_3_rw"
+  input_channels: 3
+  num_classes: 5
+  num_severity_levels: 3
+  cutpoint_margin: 0.15
+  device: "cuda"
+
+# Data Processing
+data:
+  image_size: [128, 128, 128]
+  voxel_size: [128, 128, 42]
+  downsampling_factor: 1
+  resize_method: "nearest"
+  normalize_intensity: true
+  intensity_range: [0, 1]
+
+# Inference Settings
+inference:
+  batch_size: 1
+  num_workers: 4
+  use_mixed_precision: true
+  enable_grad_checkpointing: false
+  memory_efficient: false
+
+# Output Settings
+output:
+  save_predictions: true
+  save_visualizations: true
+  output_format: ["csv", "json"]
+  confidence_threshold: 0.1
+  include_metadata: true
+
+# Model Paths
+paths:
+  vertebra_model: "models/pretrained/spinenet.pt"
+  classification_model: "models/pretrained/coatnet.pt"
+  fallback_model: "models/pretrained/maxvit_fallback.pt"
+
+# Supported Conditions
+conditions:
+  - "spinal_canal_stenosis"
+  - "left_subarticular_stenosis"
+  - "right_subarticular_stenosis"
+  - "left_neural_foraminal_narrowing"
+  - "right_neural_foraminal_narrowing"
+
+# Vertebral Levels
+levels:
+  - "l1_l2"
+  - "l2_l3"
+  - "l3_l4"
+  - "l4_l5"
+  - "l5_s1"
+
+# Severity Levels
+severity_levels:
+  - "normal_mild"
+  - "moderate"
+  - "severe" 
