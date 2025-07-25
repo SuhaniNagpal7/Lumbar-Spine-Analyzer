@@ -64,28 +64,8 @@ patient_001,spinal_canal_stenosis,l1_l2,0.85,0.12,0.03
 }
 ```
 
-## Requirements
-
-- Python 3.8+
-- CUDA GPU (recommended)
-- 16GB+ RAM
-- PyTorch, Open3D, timm_3d, spacecutter
-
-## Project Structure
-```
-lumbar-spine-analyzer/
-├── src/                    # Core code
-├── notebooks/              # Jupyter notebooks
-├── scripts/                # Command line tools
-├── configs/                # Configuration files
-├── models/pretrained/      # Pre-trained models
-└── data/                   # MRI data
-```
 
 ## Medical Disclaimer
 
 This software is for research purposes only. Not intended to replace professional medical diagnosis. Always consult healthcare professionals for medical decisions.
 
-## License
-
-MIT License - see LICENSE file for details. 
