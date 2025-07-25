@@ -15,7 +15,7 @@ A deep learning pipeline for automated analysis of degenerative conditions in lu
 
 ### Install
 ```bash
-git clone https://github.com/yourusername/lumbar-spine-analyzer.git
+git clone git@github.com:SuhaniNagpal7/Lumbar-Spine-Analyzer.git
 cd lumbar-spine-analyzer
 pip install -r requirements.txt
 ```
